@@ -95,14 +95,14 @@ class ProductManager {
     async getProductById(id) {
         try {
 
-            const buscado = productsModel.findById(id);
+            const buscador = productsModel.findById(id);
 
-            if (!buscado) {
+            if (!buscador) {
                 console.log("Producto no encontrado");
                 return null;
             } else {
                 console.log("Producto encontrado");
-                return buscado;
+                return buscador;
             }
         } catch (error) {
             console.log("Error de servidor", error);
