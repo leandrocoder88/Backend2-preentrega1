@@ -90,7 +90,7 @@ router.get("/current", passport.authenticate("jwt", { session: false }), (req, r
 })
 
 router.post("/logout", (req, res) => {
-    res.clearCookie("abueloToken");
+    res.clearCookie("leaToken");
     res.redirect("/");
 })
 
@@ -98,7 +98,7 @@ router.post("/logout", (req, res) => {
 router.get("/admin", passport.authenticate("jwt", { session: false }), (req, res) => {
 
     if (req.user.rol !== "admin") {
-        return res.status(403).render("sinPermisos");
+        return res.status(403).render("sinpermiso");
     }
     res.render("realtimeproducts");
 })
